@@ -1,0 +1,265 @@
+<svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background with slight paper texture effect -->
+    <rect width="1000" height="800" fill="#f9f9f9" />
+    <rect width="1000" height="800" fill="url(#grid)" opacity="0.05" />
+    
+    <!-- Patterns for texture -->
+    <defs>
+      <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#000000" stroke-width="0.5" opacity="0.2" />
+      </pattern>
+      
+      <!-- Arrow markers -->
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" 
+        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+      </marker>
+      
+      <marker id="diamond" viewBox="0 0 16 10" refX="15" refY="5" 
+        markerWidth="10" markerHeight="6" orient="auto">
+        <path d="M 0 5 L 8 0 L 16 5 L 8 10 z" fill="white" stroke="#333" stroke-width="1.5" />
+      </marker>
+      
+      <marker id="openArrow" viewBox="0 0 10 10" refX="9" refY="5" 
+        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#333" stroke-width="1.5" />
+      </marker>
+    </defs>
+    
+    <!-- Classes -->
+    
+    <!-- ResumeBuilder - Main class -->
+    <g transform="translate(380, 50)">
+      <rect width="240" height="240" fill="#e1f5fe" stroke="#01579b" stroke-width="2" rx="5" />
+      <line x1="0" y1="40" x2="240" y2="40" stroke="#01579b" stroke-width="2" />
+      <line x1="0" y1="90" x2="240" y2="90" stroke="#01579b" stroke-width="2" />
+      <text x="120" y="25" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">ResumeBuilder</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">- scanner: Scanner</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">- userManager: UserManager</text>
+      <text x="10" y="110" font-family="Arial" font-size="12">+ main(String[] args)</text>
+      <text x="10" y="125" font-family="Arial" font-size="12">- displayLoginMenu()</text>
+      <text x="10" y="140" font-family="Arial" font-size="12">- manageEducation()</text>
+      <text x="10" y="155" font-family="Arial" font-size="12">- manageExperience()</text>
+      <text x="10" y="170" font-family="Arial" font-size="12">- manageSkills()</text>
+      <text x="10" y="185" font-family="Arial" font-size="12">- exportToPDF()</text>
+      <text x="10" y="200" font-family="Arial" font-size="12">... (other methods)</text>
+    </g>
+    
+    <!-- User -->
+    <g transform="translate(100, 150)">
+      <rect width="180" height="140" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#2e7d32" stroke-width="2" />
+      <line x1="0" y1="80" x2="180" y2="80" stroke="#2e7d32" stroke-width="2" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">User</text>
+      <text x="10" y="45" font-family="Arial" font-size="12">- userId: String</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">- name: String</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">- resumes: List<Resume></text>
+      <text x="10" y="95" font-family="Arial" font-size="12">+ User(userId, name...)</text>
+      <text x="10" y="110" font-family="Arial" font-size="12">+ getResumes()</text>
+      <text x="10" y="125" font-family="Arial" font-size="12">+ addResume(Resume)</text>
+    </g>
+    
+    <!-- UserManager -->
+    <g transform="translate(130, 350)">
+      <rect width="180" height="120" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#2e7d32" stroke-width="2" />
+      <line x1="0" y1="70" x2="180" y2="70" stroke="#2e7d32" stroke-width="2" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">UserManager</text>
+      <text x="10" y="45" font-family="Arial" font-size="12">- users: Map<String, User></text>
+      <text x="10" y="60" font-family="Arial" font-size="12"></text>
+      <text x="10" y="85" font-family="Arial" font-size="12">+ addUser(User)</text>
+      <text x="10" y="100" font-family="Arial" font-size="12">+ authenticateUser()</text>
+      <text x="10" y="115" font-family="Arial" font-size="12">+ getUser(String)</text>
+    </g>
+    
+    <!-- Resume -->
+    <g transform="translate(380, 320)">
+      <rect width="220" height="200" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="220" y2="30" stroke="#e65100" stroke-width="2" />
+      <line x1="0" y1="100" x2="220" y2="100" stroke="#e65100" stroke-width="2" />
+      <text x="110" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Resume</text>
+      <text x="10" y="45" font-family="Arial" font-size="12">- title: String</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">- personalInfo: PersonalInfo</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">- educationList: List<Education></text>
+      <text x="10" y="90" font-family="Arial" font-size="12">- skills: Set<String></text>
+      <text x="10" y="115" font-family="Arial" font-size="12">+ Resume(String title)</text>
+      <text x="10" y="130" font-family="Arial" font-size="12">+ setPersonalInfo(...)</text>
+      <text x="10" y="145" font-family="Arial" font-size="12">+ addEducation(Education)</text>
+      <text x="10" y="160" font-family="Arial" font-size="12">+ addExperience(Experience)</text>
+      <text x="10" y="175" font-family="Arial" font-size="12">+ addSkill(String)</text>
+      <text x="10" y="190" font-family="Arial" font-size="12">... (other methods)</text>
+    </g>
+    
+    <!-- PersonalInfo -->
+    <g transform="translate(350, 570)">
+      <rect width="180" height="140" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#e65100" stroke-width="2" />
+      <line x1="0" y1="90" x2="180" y2="90" stroke="#e65100" stroke-width="2" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">PersonalInfo</text>
+      <text x="10" y="45" font-family="Arial" font-size="12">- name: String</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">- email: String</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">- phone: String</text>
+      <text x="10" y="105" font-family="Arial" font-size="12">+ getName()</text>
+      <text x="10" y="120" font-family="Arial" font-size="12">+ getEmail()</text>
+      <text x="10" y="135" font-family="Arial" font-size="12">... (other methods)</text>
+    </g>
+    
+    <!-- Education -->
+    <g transform="translate(550, 570)">
+      <rect width="180" height="140" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#e65100" stroke-width="2" />
+      <line x1="0" y1="80" x2="180" y2="80" stroke="#e65100" stroke-width="2" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Education</text>
+      <text x="10" y="45" font-family="Arial" font-size="12">- degree: String</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">- institution: String</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">- gpa: double</text>
+      <text x="10" y="95" font-family="Arial" font-size="12">+ getDegree()</text>
+      <text x="10" y="110" font-family="Arial" font-size="12">+ setDegree(String)</text>
+      <text x="10" y="125" font-family="Arial" font-size="12">... (other methods)</text>
+    </g>
+    
+    <!-- Experience -->
+    <g transform="translate(150, 570)">
+      <rect width="180" height="140" fill="#fff3e0" stroke="#e65100" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#e65100" stroke-width="2" />
+      <line x1="0" y1="90" x2="180" y2="90" stroke="#e65100" stroke-width="2" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Experience</text>
+      <text x="10" y="45" font-family="Arial" font-size="12">- jobTitle: String</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">- company: String</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">- description: String</text>
+      <text x="10" y="105" font-family="Arial" font-size="12">+ getJobTitle()</text>
+      <text x="10" y="120" font-family="Arial" font-size="12">+ setCompany(String)</text>
+      <text x="10" y="135" font-family="Arial" font-size="12">... (other methods)</text>
+    </g>
+    
+    <!-- SkillRecommendation -->
+    <g transform="translate(680, 150)">
+      <rect width="220" height="90" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="220" y2="30" stroke="#6a1b9a" stroke-width="2" />
+      <line x1="0" y1="45" x2="220" y2="45" stroke="#6a1b9a" stroke-width="2" />
+      <text x="110" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">SkillRecommendation</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">+ getRecommendedSkills(String)</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">+ getRecommendedSkillsByDesc(...)</text>
+    </g>
+    
+    <!-- FileHandler -->
+    <g transform="translate(680, 270)">
+      <rect width="180" height="90" fill="#e8eaf6" stroke="#1a237e" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#1a237e" stroke-width="2" />
+      <line x1="0" y1="45" x2="180" y2="45" stroke="#1a237e" stroke-width="2" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">FileHandler</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">+ saveUserData(UserManager)</text>
+      <text x="10" y="75" font-family="Arial" font-size="12">+ loadUserData()</text>
+    </g>
+    
+    <!-- PDFGenerator -->
+    <g transform="translate(680, 380)">
+      <rect width="200" height="80" fill="#fce4ec" stroke="#880e4f" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="200" y2="30" stroke="#880e4f" stroke-width="2" />
+      <line x1="0" y1="45" x2="200" y2="45" stroke="#880e4f" stroke-width="2" />
+      <text x="100" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">PDFGenerator</text>
+      <text x="10" y="60" font-family="Arial" font-size="12">+ generatePDF(Resume, ...)</text>
+    </g>
+    
+    <!-- ResumeTemplate -->
+    <g transform="translate(690, 500)">
+      <rect width="180" height="60" fill="#ffebee" stroke="#b71c1c" stroke-width="2" rx="5" style="stroke-dasharray: 5,3" />
+      <line x1="0" y1="30" x2="180" y2="30" stroke="#b71c1c" stroke-width="2" style="stroke-dasharray: 5,3" />
+      <text x="90" y="20" font-family="Arial" font-size="16" font-weight="bold" font-style="italic" text-anchor="middle">«interface»</text>
+      <text x="90" y="45" font-family="Arial" font-size="14" font-weight="bold" font-style="italic" text-anchor="middle">ResumeTemplate</text>
+    </g>
+    
+    <!-- ModernTemplate -->
+    <g transform="translate(630, 610)">
+      <rect width="140" height="50" fill="#ffebee" stroke="#b71c1c" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="140" y2="30" stroke="#b71c1c" stroke-width="2" />
+      <text x="70" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ModernTemplate</text>
+    </g>
+    
+    <!-- ClassicTemplate -->
+    <g transform="translate(790, 610)">
+      <rect width="140" height="50" fill="#ffebee" stroke="#b71c1c" stroke-width="2" rx="5" />
+      <line x1="0" y1="30" x2="140" y2="30" stroke="#b71c1c" stroke-width="2" />
+      <text x="70" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ClassicTemplate</text>
+    </g>
+    
+    <!-- Relationships -->
+    <!-- ResumeBuilder to UserManager (dependency - dashed line) -->
+    <path d="M 400 290 L 280 350" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="330" y="310" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- ResumeBuilder to User (dependency - dashed line) -->
+    <path d="M 380 170 L 280 170" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="330" y="160" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- ResumeBuilder to Resume (dependency - dashed line) -->
+    <path d="M 500 290 L 500 320" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="520" y="310" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- ResumeBuilder to FileHandler (dependency - dashed line) -->
+    <path d="M 620 170 L 680 270" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="670" y="240" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- ResumeBuilder to SkillRecommendation (dependency - dashed line) -->
+    <path d="M 620 170 L 680 170" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="650" y="160" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- ResumeBuilder to PDFGenerator (dependency - dashed line) -->
+    <path d="M 620 240 L 680 380" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="670" y="320" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- User to Resume (composition - solid line with filled diamond) -->
+    <path d="M 280 220 L 380 350" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#diamond)" />
+    <text x="320" y="300" font-family="Arial" font-size="12" text-anchor="middle">1     *</text>
+    
+    <!-- Resume to PersonalInfo (composition - solid line with filled diamond) -->
+    <path d="M 440 520 L 440 570" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#diamond)" />
+    <text x="460" y="550" font-family="Arial" font-size="12" text-anchor="middle">1     1</text>
+    
+    <!-- Resume to Education (composition - solid line with filled diamond) -->
+    <path d="M 600 520 L 600 570" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#diamond)" />
+    <text x="620" y="550" font-family="Arial" font-size="12" text-anchor="middle">1     *</text>
+    
+    <!-- Resume to Experience (composition - solid line with filled diamond) -->
+    <path d="M 380 400 L 240 570" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#diamond)" />
+    <text x="290" y="500" font-family="Arial" font-size="12" text-anchor="middle">1     *</text>
+    
+    <!-- PDFGenerator to ResumeTemplate (dependency - dashed line) -->
+    <path d="M 780 460 L 780 500" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="800" y="480" font-family="Arial" font-size="12" text-anchor="middle">«uses»</text>
+    
+    <!-- Template Implementation (realization - dashed line with open arrow) -->
+    <path d="M 700 560 L 700 610" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="660" y="585" font-family="Arial" font-size="12" text-anchor="middle">«implements»</text>
+    
+    <path d="M 850 560 L 850 610" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,3" />
+    <text x="900" y="585" font-family="Arial" font-size="12" text-anchor="middle">«implements»</text>
+    
+    <!-- Title shadow effect -->
+    <g transform="translate(5,5)">
+      <rect x="300" y="10" width="400" height="30" rx="5" fill="#333" opacity="0.3" />
+    </g>
+    
+    <!-- Title -->
+    <rect x="300" y="10" width="400" height="30" rx="5" fill="#4527a0" />
+    <text x="500" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">AI Resume Builder - Class Diagram</text>
+    
+    <!-- Notes -->
+    <g transform="translate(820,690)">
+      <rect width="175" height="105" fill="#fffde7" stroke="#ffab00" stroke-width="1.5" rx="5" />
+      <text x="10" y="20" font-family="Arial" font-size="12" font-weight="bold">UML Relationship Types:</text>
+      
+      <line x1="10" y1="30" x2="50" y2="30" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3" />
+      <text x="60" y="33" font-family="Arial" font-size="11">Dependency (uses)</text>
+      
+      <line x1="10" y1="50" x2="50" y2="50" stroke="#333" stroke-width="1.5" />
+      <path d="M 10 50 L 17 46 L 17 54 Z" fill="#333" stroke="none" />
+      <text x="60" y="53" font-family="Arial" font-size="11">Composition</text>
+      
+      <line x1="10" y1="70" x2="50" y2="70" stroke="#333" stroke-width="1.5" />
+      <text x="60" y="73" font-family="Arial" font-size="11">Association</text>
+      
+      <line x1="10" y1="90" x2="50" y2="90" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)" />
+      <text x="60" y="93" font-family="Arial" font-size="11">Realization/Implementation</text>
+    </g>
+  </svg>
